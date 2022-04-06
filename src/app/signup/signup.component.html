@@ -1,0 +1,24 @@
+
+<form [formGroup]="form" class="pt-16" (ngSubmit)="onSubmit()">
+  <div class="form-outline mb-4">
+    <input
+      #name
+      type="email"
+      name="email"
+      formControlName="email"
+      placeholder="Your Email"
+      value=""
+    />
+  </div>
+
+  <div class="button">
+    <button type="button" 
+    class="btn btn-primary btn-block mb-4"
+    [disabled]="form.invalid"
+    routerLink="/quiz"
+    (click)="startQuiz()">
+    Submit
+    </button>
+  </div>
+</form>
+

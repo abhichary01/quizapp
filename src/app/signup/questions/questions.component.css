@@ -1,0 +1,35 @@
+
+.card{
+    max-width: fullscreen;
+    margin: 0 auto;
+    padding: 10px;
+    background-color:rgb(160, 248, 239);
+}
+.score{
+    max-width: fullscreen;
+}
+
+li{
+    list-style-type: disc;
+    cursor: pointer;
+    margin: 10px 0;
+
+}
+
+
+li .card:hover{
+    border: 1px solid blue;
+}
+
+ol{
+    padding: 5;
+}
+
+.container-fluid{
+    background-color:rgb(212, 255, 251);
+}
+
+.progress-bar{
+    background-color:rgb(212, 255, 251);
+}
+

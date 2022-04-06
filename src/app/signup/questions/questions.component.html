@@ -1,0 +1,96 @@
+<div style="background-color:rgb(212, 255, 251);">
+<div class="container" >
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="../../../assets/Ready.jpg" width="160px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  Quiz Trivia
+              </ul>
+
+          </div>
+      </div>
+  </nav>
+</div>
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="d-flex justify-content-between p-3">
+      
+    </div>
+    <ng-container *ngIf="!isQuizompleted">
+      <div class="d-flex justify-content-between py-3">
+        <div class="score">
+          <p>Welcome &nbsp;&nbsp;<b>{{name}}</b></p>
+          <span><h4>
+            {{points}}
+          </h4></span>
+  
+          <div class="question-remain">
+            <span style="font-style: italic">Question {{currentQuestion}}/{{questionList.length}}</span> 
+          </div>
+  
+          <div class="timer">
+            {{counter}}  Secs &#9201;;
+          </div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <div class="card">
+          <h3>{{questionList[currentQuestion].question}}</h3>
+        </div>
+  
+      </div>
+  
+      <div class="options">
+  
+        <ol type="A" *ngFor="let option of questionList[currentQuestion]?.options">
+          <li (click)="checkAnswer(currentQuestion+1,option)">
+            <div appChangeBg [isCorrect]="option.correct" class="card">
+              {{option.answer}}
+            </div>
+          </li>
+        </ol>
+  
+      </div>
+  
+      <div class="progress mb-3">
+        <div class="progress-bar" role="progressbar"
+        [ngStyle]="{'width':'progress'}" aria-valuenow="progress" 
+        aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+      </div>
+
+      <!-- <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+        aria-valuenow="progress" 
+        aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+      </div>
+   -->
+      <!-- <div class="d-flex justify-content-between">
+        <button class="btn-primary"  (click)="finalPage()" [disabled]="finalPage()">Submit</button>
+      </div>  -->
+    </ng-container>
+
+    <ng-container *ngIf="isQuizompleted">
+      <div class="row d-flex justify-content-between">
+        <img style="width:50%" class="img-fluid col-sm-12 mx auto" src="../../../assets/booyah.jpg">
+        <div class="result text-center col-md-6 col-sm-12">
+          <h4><b>Congratulations!!!</b><span>You have sucessfully completed the Quiz</span></h4>
+          <p>Total Questions Attempted: {{questionList.length}}</p>
+          <p>Correct Answers: {{correctAnswer}}</p>
+          <p>InCorrect Answers: {{incorrectAnswer}}</p>
+          <p>Questions left: {{unattendedAnswer}}</p>
+          <p>Your Score: {{points}}</p>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+</div>
+</div>

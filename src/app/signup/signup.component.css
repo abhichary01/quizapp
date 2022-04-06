@@ -1,0 +1,24 @@
+
+.form-outline{
+    position:fixed;
+    top: 60%;
+    left: 55%;
+    width:16em;
+    height:0em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+.button{
+    position:fixed;
+    top: 42%;
+    left: 60%;
+    width:0em;
+    height:0em;
+    margin-top: 4em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
